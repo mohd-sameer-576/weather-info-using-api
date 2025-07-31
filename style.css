@@ -28,7 +28,7 @@
     border: 2px solid black;
     outline: none;
     border-radius: 10px;
-    padding: 0 10px;
+    padding: 10px 10px;
     font-size: 1.2rem;
     font-weight: 500;
     background: #fff;
@@ -42,7 +42,7 @@
     border: 2px solid black;
     outline: none;
     border-radius: 10px;
-    padding: 0 10px;
+    padding: 5px 10px;
     font-size: 1.2rem;
     font-weight: 500;
     color: white;
@@ -54,8 +54,66 @@
     transform: scale(0.95);
 }
 .container .weather{
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    "city country region"
+    "temp condition humidity"
+    "wind pressure visibility";
+    grid-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
     width: 100%;
-    height: 100%;
-    border-radius: 10px;
+    
     padding: 20px;
+}
+.container .weather p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.304);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.301);
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.304);
+    padding: 10px 10px;
+    width: 300px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 1019px) {
+    .container .weather{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "city country"
+        "temp condition"
+        "humidity wind"
+        "pressure visibility";
+    }
+}
+@media (max-width: 673px) {
+    .container .weather{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "city"
+        "country"
+        "region"
+        "temp"
+        "condition"
+        "humidity"
+        "wind"
+        "pressure"
+        "visibility";
+    }
 }
